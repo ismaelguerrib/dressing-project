@@ -1,0 +1,15 @@
+<div class="containerClothes product-item-wrapper">
+    <a href="/viewone/{{this._id}}" class="product-item-wrapper">
+        <div class="product-img"><img src="{{this.image}}" alt="cloth"></div>
+        <p class="product-name">{{this.name}}</p>
+        <p class="product-name">{{this.type}}</p>
+        <p class="product-name">{{this.brand}}</p>
+        <p class="product-price">${{this.price}}</p>
+    </a>
+
+    <button onclick="location.href='/delete/{{this._id}}'" type="button">
+        Delete Cloth</button>
+
+    <button onclick="location.href='/add/{{this._id}}'" type="button">
+        Add to the day</button>
+</div>

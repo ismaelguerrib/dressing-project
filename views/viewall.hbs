@@ -1,0 +1,30 @@
+{{> navbar }}
+{{> searchbar}}
+<div class="main-content-products flexed-item big-container">
+
+    {{!-- CATEGORY --}}
+    <aside class="category-wrapper">
+        <h4 class="category-title">Youre Collections</h4>
+        {{#each collecRes}}
+        {{> collection}}
+        {{/each}}
+        <h4 class="category-title">Default Collections</h4>
+        {{#each typeRes}}
+        {{> typeModel}}
+        {{/each}}
+    </aside>
+
+    {{!-- PRODUCTS--}}
+    <section class="products-wrapper" id="wrapper">
+        <div class="products-infos">
+            <h4 class="products-title">{{collection}} collection <span class="products-count">({{cloth.length}})</span>
+            </h4>
+            <p class="products-subtitle"></p>
+        </div>
+        <div class="products-grid flexed-item">
+            {{#each clothesRes}}
+            {{> cloth}}
+            {{/each}}
+        </div>
+    </section>
+</div>

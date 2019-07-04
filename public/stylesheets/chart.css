@@ -1,0 +1,12 @@
+.chartjs {
+  width: 40%;
+  height: 50%;
+  margin: 30px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
