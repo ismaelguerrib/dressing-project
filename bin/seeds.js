@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const typeModel = require("../models/typeModel");
 
 mongoose.connect("mongodb://localhost/dressingproject", {
   useNewUrlParser: true,
@@ -11,13 +12,10 @@ mongoose.connection.on("connected", () =>
 
 mongoose.connection.on("error", () => console.log("nay db error sorry :("));
 
-const typeModel = require("../models/typeModel");
-
 const array = [
   {
     name: "Top"
   },
-
   {
     name: "Bottom"
   },
@@ -30,6 +28,6 @@ const array = [
 ];
 
 typeModel
-  .create(array)
+  .insertMany(array)
   .then(res => console.log(res))
   .catch(err => console.log(err));

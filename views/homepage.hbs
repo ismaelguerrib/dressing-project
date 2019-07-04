@@ -1,27 +1,52 @@
 {{> navbar }}
-{{>meteo}}
 
-<div class="clothes-section">
+<div class="principal-container">
+  <div class="meteo">
 
-  <h3 class="title-homepage">Yesterday Clothes</h3>
+    {{>meteo}}
 
-  <div class="homepage-container">
-    {{#each dayclothes }}
+  </div>
+  <div class="yesterday">
 
-    {{#each current}}
-
-
-    <div class="homepage-clothes"><img class="product-img" src="{{this.image}}" alt="cloth">
-      <p class="product-name">{{this.name}}</p>
-      <p class="product-name">{{this.type}}</p>
-      <p class="product-name">{{this.brand}}</p>
-      <p class="product-price">${{this.price}}</p>
+    <div class="clothes-section">
+      <h3 class="title-homepage">Yesterday Clothes</h3>
+      <div class="homepage-container">
+        {{#each dayclothes }}
+        {{#each current}}
+        <div class="homepage-clothes"><img class="product-img" src="{{this.image}}" alt="cloth">
+          <p class="product-name">{{this.name}}</p>
+          <p class="product-name">{{this.type}}</p>
+          <p class="product-name">{{this.brand}}</p>
+          <p class="product-price">${{this.price}}</p>
+        </div>
+        {{/each}}
+        {{/each}}
+      </div>
     </div>
 
 
-    {{/each}}
-
-    {{/each}}
-
   </div>
 </div>
+
+<div class="mapTitle">
+
+  <h2>Find Your Retailer !! </h2>
+
+</div>
+
+<div class="map">
+
+  <div class="map">
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+
+      ;
+    </style>
+  </div>
+</div>
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0DeMLqoAnFuvMokwgI_xkcN4f_KwuCLg"></script>
+<script type="text/javascript" src="/javascripts/map.js"></script>

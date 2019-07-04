@@ -8,5 +8,5 @@ const typeSchema = new Schema({
   }
 });
 
-const typeModel = mongoose.model("type", typeSchema);
+const typeModel = mongoose.model("typeModel", typeSchema);
 module.exports = typeModel;
