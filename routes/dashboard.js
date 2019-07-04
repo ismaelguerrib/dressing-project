@@ -18,7 +18,9 @@ router.get("/dashboard", (req, res, next) => {
 router.get("/api/dashboard", (req, res, next) => {
   clothes
     .find()
+    .populate("typeCat")
     .then(resultat => {
+      console.log(resultat);
       res.send(resultat);
     })
     .catch();

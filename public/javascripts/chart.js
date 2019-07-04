@@ -1,5 +1,9 @@
 axios
-  .get("http://localhost:3000/api/dashboard")
+  .get(
+    `${document
+      .getElementById("site-url")
+      .getAttribute("data-url")}/api/dashboard`
+  )
   .then(res => {
     console.log(res);
     const price = {};
@@ -34,28 +38,28 @@ axios
     ///////////
     var top = 0;
     for (let i = 0; i < res.data.length; i++) {
-      if (res.data[i].typeCat === "5d1df9b519a437231515188c") {
+      if (res.data[i].typeCat.name === "Top") {
         top = top + 1;
       }
     }
 
     var Bottom = 0;
     for (let i = 0; i < res.data.length; i++) {
-      if (res.data[i].typeCat === "5d1df9b519a437231515188d") {
+      if (res.data[i].typeCat.name === "Bottom") {
         Bottom = Bottom + 1;
       }
     }
 
     var Shoes = 0;
     for (let i = 0; i < res.data.length; i++) {
-      if (res.data[i].typeCat === "5d1df9b519a437231515188e") {
+      if (res.data[i].typeCat.name === "Shoes") {
         Shoes = Shoes + 1;
       }
     }
 
     var Accessoires = 0;
     for (let i = 0; i < res.data.length; i++) {
-      if (res.data[i].typeCat === "5d1df9b519a437231515188f") {
+      if (res.data[i].typeCat.name === "Accessoires") {
         Accessoires = Accessoires + 1;
       }
     }

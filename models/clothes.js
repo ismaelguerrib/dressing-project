@@ -5,7 +5,7 @@ const clothesSchema = new Schema({
   name: { type: String },
   brand: String,
   size: String,
-  typeCat: { type: Schema.Types.ObjectId, ref: "type" },
+  typeCat: { type: Schema.Types.ObjectId, ref: "typeModel" },
   price: { type: Number },
   addeddate: { type: Date },
   season: { type: String },
