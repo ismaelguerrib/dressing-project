@@ -1,6 +1,7 @@
 axios
   .get("http://localhost:3000/api/dashboard")
   .then(res => {
+    console.log(res);
     const price = {};
     const count = {};
     const priceArray = [];
@@ -33,15 +34,29 @@ axios
     ///////////
     var top = 0;
     for (let i = 0; i < res.data.length; i++) {
-      if (res.data[i].type === "Top") {
+      if (res.data[i].typeCat === "5d1df9b519a437231515188c") {
         top = top + 1;
       }
     }
 
-    var jean = 0;
+    var Bottom = 0;
     for (let i = 0; i < res.data.length; i++) {
-      if (res.data[i].type === "Jean") {
-        jean = jean + 1;
+      if (res.data[i].typeCat === "5d1df9b519a437231515188d") {
+        Bottom = Bottom + 1;
+      }
+    }
+
+    var Shoes = 0;
+    for (let i = 0; i < res.data.length; i++) {
+      if (res.data[i].typeCat === "5d1df9b519a437231515188e") {
+        Shoes = Shoes + 1;
+      }
+    }
+
+    var Accessoires = 0;
+    for (let i = 0; i < res.data.length; i++) {
+      if (res.data[i].typeCat === "5d1df9b519a437231515188f") {
+        Accessoires = Accessoires + 1;
       }
     }
 
@@ -80,11 +95,40 @@ axios
     new Chart(document.getElementById("myChart3").getContext("2d"), {
       type: "pie",
       data: {
-        labels: ["Top", "Jean"],
+        labels: ["Top", "Bottom", "Shoes", "Accessoires"],
         datasets: [
           {
-            data: [top, jean],
+            data: [top, Bottom, Shoes, Accessoires],
             backgroundColor: ["#3e95cd", "#8e5ea2"]
+          }
+        ]
+      }
+    });
+
+    new Chart(document.getElementById("myChart4").getContext("2d"), {
+      type: "bar",
+      data: {
+        labels: Object.keys(priceArray),
+        datasets: [
+          {
+            label: "top",
+            data: [top],
+            backgroundColor: "#3e95cd"
+          },
+          {
+            label: "Bottom",
+            data: [Bottom],
+            backgroundColor: "8e5ea2"
+          },
+          {
+            label: "Shoes",
+            data: [Shoes],
+            backgroundColor: "8e5ea5"
+          },
+          {
+            label: "Accessoires",
+            data: [Accessoires],
+            backgroundColor: "8e5eq2"
           }
         ]
       }

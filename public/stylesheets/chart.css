@@ -1,6 +1,5 @@
 .chartjs {
   width: 40%;
-  height: 50%;
   margin: 30px;
 }
 
@@ -9,4 +8,9 @@
   justify-content: center;
   flex-direction: row;
   margin-top: 20px;
+}
+
+.chart-title {
+  text-align: center;
+  margin-top: 30px;
 }
