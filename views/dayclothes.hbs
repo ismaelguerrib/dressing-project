@@ -1,15 +1,16 @@
 {{> navbar }}
 
-<div class="containerClothes product-item-wrapper">
+
+<div class="containerClothes">
   {{#each dayclothes}}
   {{#each current}}
 
-  <a href="/viewone/{{this.current._id}}" class="product-item-wrapper">
-    <div class="product-img"><img src="{{this.image}}" alt="cloth">
-      <p class="product-name">{{this.name}}</p>
-      <p class="product-name">{{this.type}}</p>
-      <p class="product-name">{{this.brand}}</p>
-      <p class="product-price">${{this.price}}</p>
+  <a href="/viewone/{{this.current._id}}" class="">
+    <div class="dayclothes-product" id="dayclothes-image"><img src="{{this.image}}" alt="cloth"></div>
+    <p class="dayclothes-product">{{this.name}}</p>
+    <p class="dayclothes-product">{{this.type}}</p>
+    <p class="dayclothes-product">{{this.brand}}</p>
+    <p class="dayclothes-product">${{this.price}}</p>
   </a>
 
 

@@ -1,0 +1,22 @@
+.containerClothes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  grid-template-rows: 100px auto 100px;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+}
+
+.containerClothes a {
+  display: block;
+  width: 100%;
+}
+
+.dayclothes-product {
+  align-self: start;
+  height: 10%;
+}
+/* .dayclothes-image {
+  width: 10%;
+  height: auto;
+} */
