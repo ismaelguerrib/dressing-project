@@ -9,7 +9,7 @@ function fromKtoC(k) {
 function getWeather() {
   axios
     .get(
-      "http://api.openweathermap.org/data/2.5/weather?id=6455259&appid=c2e55112c6c0f6ad92cb23e454a5f0c5"
+      "https://api.openweathermap.org/data/2.5/weather?id=6455259&appid=c2e55112c6c0f6ad92cb23e454a5f0c5"
     )
     .then(apiRes => {
       console.log(apiRes);
