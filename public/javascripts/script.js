@@ -13,18 +13,24 @@ function createProductContent(arr) {
       "beforeend",
       `<div class="{{containerClothes}} product-item-wrapper">
     <a href="/viewone/${element._id}" class="product-item-wrapper">
-        <div class="product-img"><img src="${element.image}" alt="cloth"></div>
+        <div class="product-img">
+        <img src="${element.image}" alt="cloth">
         <p class="product-name">${element.name}</p>
         <p class="product-name">${element.type}</p>
         <p class="product-name">${element.brand}</p>
         <p class="product-price">$${element.price}</p>
+        </div>
         
-        <button onclick="location.href='/delete/${element._id}'" type="button">
-        Delete Cloth</button>
-        
-        <button onclick="location.href='/add/${element._id}'" type="button">
-        Add to the day</button>
+        <div class="btn-container">
+        <a href="/add/${element._id}" class="btn">Add to the day</a>
+        <br>
+        <a href="/edit/${element._id}'" class="btn">
+            Edit
         </a>
+        <br>
+        <a href="/delete/${element._id}'" class="btn">
+            Delete</a>
+    </div>
 </div>`
     );
   });
