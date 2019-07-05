@@ -1,0 +1,57 @@
+{{> navbar }}
+
+<div class="big-container product-manage-wrapper flexed-item">
+    <form method="post" action="/edit/{{updateClothe._id}}" class="add-product-form" enctype="multipart/form-data">
+        <h3 class="form-title">Modify Your Clothe </h3>
+
+        <div class="form-item-wrapper flexed-item">
+
+            <label for="clothes-pic" class="label-name label"> Picture</label>
+            <input type="file" class="input-text input" name="image" value="{{updateClothe.image}}">
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="clothes-name" class="label-name label">Name</label>
+            <input type="text" class="input-text input" value="{{updateClothe.name}}" name="name">
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="brand" class="label-ref label">Brand </label>
+            <input type="text" class="input-text input" value="{{updateClothe.brand}}" name="brand">
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="clothes-size" class="label-ref label">Size</label>
+            <input type="text" class="input-text input" value="{{updateClothe.size}}" name="size">
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="cloth-type" class="label-ref label">Type</label>
+            <select name="typeCat" id="secondary_category" class="select">
+                <option value=""> Choose a Type...</option>
+                {{#each types}}
+                <option value={{this._id}}> {{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="clothes-price" class="label-ref label">Price</label>
+            <input type="number" class="input-text input" value="{{updateClothe.price}}" name="price">
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="clothes-addeddate" class="label-ref label">Added Date</label>
+            <input type="date" class="input-text input" value="10-07-2019" name="addeddate">
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="clothes-season" class="label-ref label">Season</label>
+            <input type="text" class="input-text input" value="{{updateClothe.season}}" name="season">
+        </div>
+
+        <div class="form-item-wrapper flexed-item">
+            <label class="label">Collection</label>
+            <select name="collec" id="secondary_category" class="select">
+
+                <option value="">Choose a collection ...</option>
+                {{#each collection}}
+                <option value="{{this._id}}"> {{this.label}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <button class="button-primary add-sneacker-btn">Add to your dressing</button>
+    </form>
