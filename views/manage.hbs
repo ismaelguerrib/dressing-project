@@ -2,15 +2,15 @@
 
 <div class="big-container product-manage-wrapper flexed-item">
     <form method="post" action="/manage" class="add-product-form" enctype="multipart/form-data">
-        <h3 class="form-title">Add Youre Clothes to the collection</h3>
+        <h3 class="form-title">Add a new Clothe to Your dressing</h3>
 
         <div class="form-item-wrapper flexed-item">
 
-            <label for="clothes-pic" class="label-name label">Clothes picture</label>
+            <label for="clothes-pic" class="label-name label"> Picture</label>
             <input type="file" class="input-text input" name="image">
         </div>
         <div class="form-item-wrapper flexed-item">
-            <label for="clothes-name" class="label-name label">Clothes name</label>
+            <label for="clothes-name" class="label-name label">Name</label>
             <input type="text" class="input-text input" value="Black Tee-Shirt" name="name">
         </div>
         <div class="form-item-wrapper flexed-item">
@@ -24,7 +24,7 @@
         <div class="form-item-wrapper flexed-item">
             <label for="cloth-type" class="label-ref label">Type</label>
             <select name="typeCat" id="secondary_category" class="select">
-                <option value="">Create Youre Clothes Type...</option>
+                <option value=""> Choose a Type...</option>
                 {{#each types}}
                 <option value="{{this._id}}"> {{this.name}}</option>
                 {{/each}}
@@ -52,13 +52,13 @@
             <label class="label">Collection</label>
             <select name="collec" id="secondary_category" class="select">
 
-                <option value="">Choose a collection to youre clothe...</option>
+                <option value="">Choose a collection ...</option>
                 {{#each collection}}
                 <option value="{{this._id}}"> {{this.label}}</option>
                 {{/each}}
             </select>
         </div>
-        <button class="button-primary add-sneacker-btn">Add to collection</button>
+        <button class="button-primary add-sneacker-btn">Add to your dressing</button>
     </form>
 
     <form action="/collection" method="POST" class="add-category-form">

@@ -53,6 +53,45 @@ router.get("/add/:id", (req, res) => {
     .catch(dbErr => console.log(dbErr));
 });
 
+// router.get("/edit/:id", (req, res) => {
+//   Console.log(".............hello");
+//   cloth
+//     .findById(req.params.id)
+//     .then(updateClothe => res.render("manage", { updateClothe }))
+//     .catch(err => console.log(err));
+// });
+
+// router.post("/manage", (req, res) => {
+//   const {
+//     name,
+//     brand,
+//     size,
+//     typeCat,
+//     price,
+//     addeddate,
+//     season,
+//     image,
+//     collec
+//   } = req.body;
+//   cloth
+//     .updateOne(
+//       { _id: req.params.id },
+//       {
+//         name,
+//         brand,
+//         size,
+//         typeCat,
+//         price,
+//         addeddate,
+//         season,
+//         collec,
+//         image
+//       }
+//     )
+//     .then(() => res.redirect("/viewall"))
+//     .catch(err => console.log(err));
+// });
+
 // router.get("/add/:id", (req, res) => {
 //   console.log(req.params);
 //   const id = req.params.id;
