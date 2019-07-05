@@ -7,9 +7,35 @@
         <p class="product-price">${{this.price}}</p>
     </a>
 
-    <button onclick="location.href='/delete/{{this._id}}'" type="button">
-        Delete Cloth</button>
+    <div class="btn-container">
+        <a href="/add/{{this._id}}" class="btn">Add to the day</a>
+        <br>
+        <a href="/edit/{{this._id}}" class="btn">
+            Edit
+        </a>
+        <br>
+        <a href="/delete/{{this._id}}" class="btn">
+            Delete</a>
+    </div>
+    <style>
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    <button onclick="location.href='/add/{{this._id}}'" type="button">
-        Add to the day</button>
+
+
+        .btn {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            color: white;
+            background-color: #5DBDC4
+        }
+    </style>
+
 </div>

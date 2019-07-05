@@ -22,6 +22,7 @@ body {
 
 h1 {
   font-family: "Source Sans Pro", sans-serif;
+  color: #5dbdc4;
 }
 
 h2,
@@ -29,6 +30,7 @@ h3,
 h4 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
+  color: #5dbdc4;
 }
 
 .big-container {

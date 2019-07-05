@@ -3,6 +3,8 @@ const router = new express.Router();
 const cloth = require("../models/clothes");
 const dayClothes = require("../models/day-clothes");
 const user = require("../models/users");
+const typeModel = require("../models/typeModel");
+const collectionModel = require("../models/collection");
 
 router.get("/viewone/:id", (req, res, next) => {
   cloth
@@ -51,6 +53,63 @@ router.get("/add/:id", (req, res) => {
       }
     })
     .catch(dbErr => console.log(dbErr));
+});
+
+router.get("/edit/:id", (req, res) => {
+  Promise.all([
+    cloth.findById(req.params.id),
+    typeModel.find(),
+    collectionModel.find()
+  ])
+    .then(promises => {
+      const updateClothe = promises[0];
+      const types = promises[1];
+      const collection = promises[2];
+      res.render("edit", { updateClothe, types, collection });
+    })
+    .catch(err => console.log(err));
+
+  // cloth
+  //   .findById(req.params.id)
+  //   .then(updateClothe => {
+  //     typeModel.find().then(types => {
+  //       collectionModel.find().then(collection => {
+  //         res.render("edit", { updateClothe, types, collection });
+  //       });
+  //     });
+  //   })
+  //   .catch(err => console.log(err));
+});
+
+router.post("/edit/:id", (req, res) => {
+  const {
+    name,
+    brand,
+    size,
+    typeCat,
+    price,
+    addeddate,
+    season,
+    image,
+    collec
+  } = req.body;
+  cloth
+    .updateOne(
+      { _id: req.params.id },
+      {
+        name,
+        brand,
+        size,
+        typeCat,
+        price,
+        addeddate,
+        season,
+        collec,
+        image
+      }
+    )
+    .then(() => res.redirect("/viewall"))
+    .catch(err => console.log(err));
 });
 
 // router.get("/add/:id", (req, res) => {

@@ -11,20 +11,20 @@ function createProductContent(arr) {
   arr.forEach(element => {
     productGrid.insertAdjacentHTML(
       "beforeend",
-      `<div class="containerClothes product-item-wrapper">
+      `<div class="{{containerClothes}} product-item-wrapper">
     <a href="/viewone/${element._id}" class="product-item-wrapper">
         <div class="product-img"><img src="${element.image}" alt="cloth"></div>
         <p class="product-name">${element.name}</p>
         <p class="product-name">${element.type}</p>
         <p class="product-name">${element.brand}</p>
         <p class="product-price">$${element.price}</p>
-    </a>
-
-    <button onclick="location.href='/delete/${element._id}'" type="button">
+        
+        <button onclick="location.href='/delete/${element._id}'" type="button">
         Delete Cloth</button>
-
-    <button onclick="location.href='/add/${element._id}'" type="button">
+        
+        <button onclick="location.href='/add/${element._id}'" type="button">
         Add to the day</button>
+        </a>
 </div>`
     );
   });
@@ -41,7 +41,6 @@ function getClothes() {
             .substring(0, searchbar.value.length)
             .includes(searchbar.value.toLowerCase());
         });
-        console.log(myResult);
         createProductContent(myResult);
       })
       .catch(dbErr => console.log(dbErr));
