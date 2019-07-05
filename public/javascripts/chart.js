@@ -139,3 +139,46 @@ axios
     });
   })
   .catch(err => console.log(err));
+
+axios
+  .get(
+    `${document
+      .getElementById("site-url")
+      .getAttribute("data-url")}/api2/dashboard`
+  )
+  .then(res => {
+    console.log(res.data.dayClothes[0].current[0].name);
+    const allClothes = [];
+    for (let i = 0; i < res.data.dayClothes.length; i++) {
+      for (let y = 0; y < res.data.dayClothes[i].current.length; y++) {
+        allClothes.push(res.data.dayClothes[i].current[y].name);
+      }
+    }
+
+    const allImg = [];
+    for (let i = 0; i < res.data.dayClothes.length; i++) {
+      for (let y = 0; y < res.data.dayClothes[i].current.length; y++) {
+        allImg.push(res.data.dayClothes[i].current[y].image);
+      }
+    }
+
+    var mf = 1;
+    var m = 0;
+    var item;
+    var img;
+    for (let z = 0; z < allClothes.length; z++) {
+      for (let j = z; j < allClothes.length; j++) {
+        if (allClothes[z] == allClothes[j]) m++;
+        if (mf < m) {
+          mf = m;
+          item = allClothes[z];
+          img = allImg[z];
+        }
+      }
+      m = 0;
+    }
+
+    var chartTitle = document.getElementById("chart-title");
+    chartTitle.innerHTML = `<h3>The apparel you use the most is : ${item} (${mf} times)</h3> <img src="${img}" class="imginnerhtml">`;
+  })
+  .catch();
