@@ -31,6 +31,25 @@ function createProductContent(arr) {
         <a href="/delete/${element._id}'" class="btn">
             Delete</a>
     </div>
+    <style>
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .btn {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            color: white;
+            background-color: #5DBDC4
+        }
+    </style>
+
 </div>`
     );
   });
